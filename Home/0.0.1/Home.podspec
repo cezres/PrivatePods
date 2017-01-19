@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     s.default_subspec = 'Home'
 
     s.subspec 'Home' do |h|
-        h.source_files = "Classes/**/*.{h,m}", "Interface/HomeInterface.*"
+        h.source_files = "Classes", "Classes/**/*.{h,m}", "Interface", "Interface/HomeInterface.*"
 #        h.source_files = "Interface", "Interface/**/*.{h,m}"
 #        h.exclude_files = "Interface/ESMediator+Home.*"
 
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'Interface' do |i|
         i.source_files = "Interface", "Interface/ESMediator+Home.*"
-        i.exclude_files = "Interface/HomeInterface.*"
+#i.exclude_files = "Interface/HomeInterface.*"
         i.dependency "ESMediator"
     end
 
