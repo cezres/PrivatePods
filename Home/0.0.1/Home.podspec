@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   # s.description  = <<-DESC DESC
   s.homepage     = "http://www.d2cmall.com"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "云之彼端" => "cezres@163.com" }
+  s.author       = { "云之彼端" => "cezres@163.com" }
   s.platform     = :ios, "7.0"
 
   s.source       = { :svn => "https://192.168.0.142/svn/app-ios-buyer-phone/Module/Home", :tag => "#{s.version}" }
@@ -31,12 +31,16 @@ Pod::Spec.new do |s|
 
     s.requires_arc = true
 
-    s.default_subspec = 'Home'
+    s.default_subspec = 'Interface'
+
+
+    s.subspec 'Interface' do |i|
+        i.source_files = "Interface/HomeInterface.*"
+        i.dependency "Home/Home"
+    end
 
     s.subspec 'Home' do |h|
-        h.source_files = "Classes", "Classes/**/*.{h,m}", "Interface", "Interface/HomeInterface.*"
-#        h.source_files = "Interface", "Interface/**/*.{h,m}"
-#        h.exclude_files = "Interface/ESMediator+Home.*"
+        h.source_files = "Classes/**/*.{h,m}"
 
         h.frameworks = "WebKit"
         
@@ -53,10 +57,9 @@ Pod::Spec.new do |s|
     end
 
 
-    s.subspec 'Interface' do |i|
-        i.source_files = "Interface", "Interface/ESMediator+Home.*"
-#i.exclude_files = "Interface/HomeInterface.*"
-        i.dependency "ESMediator"
+    s.subspec 'Mediator' do |m|
+        m.source_files = "Interface/ESMediator+Home.*"
+        m.dependency "ESMediator"
     end
 
 
