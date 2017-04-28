@@ -4,8 +4,8 @@ s.version = '2.1.0'
 s.summary = 'INZip' 
 s.homepage = 'http://www.in66.com' 
 s.license = 'MIT' 
-s.author = { 'chenfeng' => 'chenfeng@in66.com' } 
+s.author = { 'xxxxx' => 'chenfeng@in66.com' } 
 s.platform = :ios, '8.0' 
-s.source = { :git => 'https://github.com/cezres/sdk.git', :commit => '5abe63fbd09790a2ce05d54a8fa9491251ce3994' } 
+s.source = { :git => 'https://github.com/cezres/sdk.git', :commit => 'c88a2f2d5637a9b097973b0d2bef61546e4b2b09' } 
 s.vendored_frameworks = 'INZip/INZip.framework' 
 end
